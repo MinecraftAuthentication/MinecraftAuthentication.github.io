@@ -26,34 +26,47 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/MinecraftAuthentication/MinecraftAuthentication.github.io',
         },
+        blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './src/css/minecraftAuth.scss',
         },
       } satisfies Preset.Options,
     ],
   ],
 
+  plugins: ['docusaurus-plugin-sass'],
+
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: 'My Site',
+      title: 'Minecraft Authentication Wiki',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'The MinecraftAuth.me Logo',
+        src: 'img/logo.png',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'wiki',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Wiki',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          type: 'docSidebar',
+          sidebarId: 'api',
+          position: 'left',
+          label: 'API',
+        },
+        {
+          href: 'https://github.com/MinecraftAuthentication/MinecraftAuthentication.github.io',
           label: 'GitHub',
           position: 'right',
         },
@@ -63,19 +76,10 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
           title: 'Community',
           items: [
             {
-              label: 'Discord',
+              label: 'Minecraft Auth Discord',
               href: 'https://discord.gg/QhBWpURsD7',
             },
           ],
@@ -84,13 +88,22 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Status Page',
+              href: 'https://status.minecraftauth.me/',
+            },
+            {
+              label: 'Plugin GitHub',
+              href: 'https://github.com/MinecraftAuthentication/plugin',
+            },
+            {
+              label: 'Java Lib GitHub',
+              href: 'https://github.com/MinecraftAuthentication/lib',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} MinecraftAuth.me. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://minecraftauth.me/">MinecraftAuth.me</a>. Built with <a href="https://docusaurus.io/">Docusaurus V3</a>.  </br>
+      <i>Not endorsed by Mojang, Minecraft, Microsoft, or any other platform.</i>`,
     },
     prism: {
       theme: prismThemes.github,

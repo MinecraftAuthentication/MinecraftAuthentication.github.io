@@ -1,0 +1,67 @@
+[data-theme='dark'] {
+    //Background color for the background of the site-wide navbar
+    --ifm-navbar-background-color: #0D1117;
+
+    //Text color for the sidebar text when selected/active
+    --ifm-menu-color-active: #1d1b1b;
+    //Background color for active/selected sidebar items
+    --ifm-menu-color-background-active: #BFC7D4;
+    //Global color for links
+    --ifm-link-color: #BFC7D4;
+    //Global text color for links when hovered
+    --ifm-link-hover-color: #5B608F;
+    //Text color for footer links
+    --ifm-footer-link-hover-color: #5B608F;
+    //Text color for navbar links
+    --ifm-navbar-link-hover-color: #5B608F;
+
+    //Text color for active/selected breadcrumb items
+    --ifm-breadcrumb-color-active: #0B0C0F;
+    //Background color for active/selected breadcrumb items
+    --ifm-breadcrumb-item-background-active: #BFC7D4;
+
+    //Color for borders, mostly used in the right sidebar border and the top footer border
+    --ifm-toc-border-color: #b2d7fb;
+}
+
+html{
+    //sets the global background
+    background: url("/static/img/bg.png");
+}
+
+.navbar__link--active{
+    //separates the active hover text color from the infima variable for the global background color
+    color: #0D1117;
+    &:hover{
+        color: #3B4AF5;
+    }
+}
+
+.footer{
+    //Adds the same border used on the sidebar to the top of the footer
+    border-top: 1px solid var(--ifm-toc-border-color);
+    //Removes the footer background so that the global image background shows through
+    background-color: rgba(0,0,0,0)
+}
+
+.navbar__link--active{
+    //Adds the same border and background color to the active navbar items as is on the sidebar items
+    background-color: var(--ifm-menu-color-background-active) !important;
+    border-radius: 0.25rem;
+}
+
+div.menu__list-item-collapsible--active {
+    a.menu__link--sublist.menu__link--active{
+        //colors the header page for categories when they have a landing page that is selected
+        background-color: var(--ifm-menu-color-background-active) !important;
+        color: var(--ifm-menu-color-active) !important;
+    }
+}
+
+.menu__link--sublist.menu__link--active{
+    //sets the correct text color for categories when a sub-page is open
+    color: var(--ifm-menu-color) !important;
+}
+
+
+    
